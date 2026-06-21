@@ -1,0 +1,108 @@
+{
+  "theme": "Dark",
+  "archetype": "4 (Swiss & High-Contrast)",
+  "brand_identity": {
+    "domain": "Scientific / Quantum Calculator",
+    "emotional_tone": "Precise, Serious, Premium, Lab-grade",
+    "visual_mood": "Deep dark UI, terminal-like precision, glowing high-contrast accents"
+  },
+  "colors": {
+    "background": "#050505",
+    "surface_main": "#121212",
+    "surface_card": "#161616",
+    "surface_input": "#1E1E1E",
+    "primary": "#0F6CBD",
+    "primary_hover": "#1177D1",
+    "accent_cyan": "#00E5FF",
+    "accent_pink": "#FF7EB6",
+    "text_primary": "#F4F4F4",
+    "text_secondary": "#A8A8A8",
+    "text_muted": "#6E6E6E",
+    "border_subtle": "#262626",
+    "border_active": "#4D5358"
+  },
+  "typography": {
+    "fonts": {
+      "ui": "'IBM Plex Sans', sans-serif",
+      "math": "'IBM Plex Mono', monospace"
+    },
+    "hierarchy": {
+      "h1": "text-4xl tracking-tighter font-semibold text-text_primary leading-tight",
+      "h2": "text-2xl tracking-tight font-medium text-text_primary leading-snug",
+      "h3": "text-xl tracking-tight font-medium text-text_primary",
+      "body": "text-base font-normal text-text_secondary leading-relaxed",
+      "math_large": "text-xl font-mono text-accent_cyan tracking-wide",
+      "math_cell": "text-sm font-mono text-text_primary text-center",
+      "label_small": "text-xs font-medium uppercase tracking-[0.1em] text-text_muted"
+    }
+  },
+  "spacing_and_layout": {
+    "container": "max-w-md mx-auto min-h-screen flex flex-col relative pb-[84px] bg-background text-text_primary overflow-x-hidden",
+    "section_padding": "p-4 sm:p-6",
+    "gap_standard": "gap-4",
+    "matrix_grid": "grid gap-[1px] bg-border_subtle border border-border_subtle rounded-sm overflow-hidden",
+    "matrix_cell": "bg-surface_main p-2"
+  },
+  "components": {
+    "bottom_tab_bar": {
+      "wrapper": "fixed bottom-0 left-0 right-0 h-[80px] bg-background/85 backdrop-blur-xl border-t border-border_subtle flex justify-around items-center px-2 pb-safe z-50",
+      "item_active": "flex flex-col items-center gap-1 text-accent_cyan",
+      "item_inactive": "flex flex-col items-center gap-1 text-text_muted hover:text-text_secondary transition-colors",
+      "label": "text-[10px] font-medium tracking-wide"
+    },
+    "inputs": {
+      "matrix_cell": "w-14 h-12 text-center bg-transparent focus:bg-surface_input border-none focus:ring-1 focus:ring-accent_cyan text-text_primary font-mono text-sm transition-colors placeholder:text-text_muted/30 outline-none",
+      "json_textarea": "w-full h-40 bg-surface_main border border-border_subtle rounded-md p-3 font-mono text-sm text-text_secondary focus:border-accent_cyan focus:ring-1 focus:ring-accent_cyan resize-none",
+      "toggle_group": "flex bg-surface_main p-1 rounded-md border border-border_subtle",
+      "toggle_item": "flex-1 text-center py-2 text-sm font-medium rounded-sm transition-colors cursor-pointer"
+    },
+    "data_display": {
+      "matrix_bracket": "relative inline-block border-l-2 border-r-2 border-text_secondary px-4 py-2 mx-1 rounded-none",
+      "vector_ket": "before:content-['|'] after:content-['⟩'] font-mono text-accent_cyan",
+      "complex_i": "text-accent_pink italic font-serif"
+    },
+    "histogram": {
+      "container": "w-full h-48 flex items-end justify-around gap-2 mt-6 border-b border-border_subtle pb-1 relative",
+      "bar_wrapper": "flex flex-col items-center gap-2 group w-full",
+      "bar_fill": "w-full max-w-[40px] bg-primary hover:bg-accent_cyan transition-colors rounded-t-sm relative shadow-[0_0_10px_rgba(15,108,189,0.2)] group-hover:shadow-[0_0_15px_rgba(0,229,255,0.4)]",
+      "label": "text-xs font-mono text-text_secondary",
+      "probability": "text-[10px] font-mono text-text_muted absolute -top-5 opacity-0 group-hover:opacity-100 transition-opacity"
+    },
+    "cards": {
+      "history_card": "w-full p-4 bg-surface_card border border-border_subtle rounded-lg flex flex-col gap-3 hover:border-text_muted transition-colors group cursor-pointer",
+      "reference_card": "w-full p-4 bg-surface_card border-l-4 border-l-primary border-y border-r border-border_subtle rounded-r-lg mb-3"
+    },
+    "buttons": {
+      "primary": "w-full h-14 bg-primary text-white rounded-md font-medium text-lg flex items-center justify-center gap-2 hover:bg-primary_hover active:scale-[0.98] transition-all shadow-[0_0_15px_rgba(15,108,189,0.2)] disabled:opacity-50 disabled:pointer-events-none"
+    }
+  },
+  "motion": {
+    "page_enter": "animate-in fade-in slide-in-from-bottom-2 duration-300",
+    "bar_grow": "animate-in slide-in-from-bottom-full duration-700 ease-out",
+    "tab_switch": "transition-all duration-200"
+  },
+  "icons": {
+    "library": "@phosphor-icons/react",
+    "usage": "Use Phosphor Icons (Regular or Bold weight). Calculator: 'MathOperations' or 'GridFour'. History: 'ClockCounterClockwise'. Reference: 'BookOpenText'."
+  },
+  "instructions_to_main_agent": [
+    "Install Google Fonts in global CSS (or via index.html): `@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');`.",
+    "Set up Tailwind configuration to include the custom colors (`background`, `surface_main`, etc.) and fonts (`ui`, `math`) defined in these guidelines.",
+    "Install the required icon library: `yarn add @phosphor-icons/react`.",
+    "Structure the main app view as a mobile web app: Use `max-w-md mx-auto` on the root container to simulate a phone screen on desktop, with a fixed bottom navigation bar at `bottom-0`.",
+    "For the Calculator Tab: Create a top section for the 'Operation Picker' (e.g., Shadcn Select). Show the required matrix/vector input sections based on the chosen operation (multiply_matrix, apply_gate, normalize_vector, tensor_product, measure).",
+    "Implement an 'Input Mode' toggle (Grid vs Text/JSON) for matrices. The Grid mode should dynamically render RxC inputs based on a dimension selector (e.g., 2x2, 4x4).",
+    "When displaying output matrices in the result section, wrap the grid in a div with `border-l-2 border-r-2 border-text_secondary rounded-none` to mimic mathematical bracket notation. Do NOT use standard Shadcn cards for mathematical output arrays.",
+    "For complex numbers in inputs and results, format them elegantly. For example, `0.707 + 0.707i`, where 'i' has a subtle accent color or italic styling.",
+    "In the History tab, store operations locally (using localStorage or state). Display them as cards showing the operation name, timestamp, and a condensed preview of the result.",
+    "In the Reference tab, hardcode a list of common quantum gates (Hadamard, Pauli-X, Pauli-Y, Pauli-Z, CNOT) with their symbolic representation and exact matrix definitions.",
+    "The Histogram component (for the 'measure' operation) should be built using simple flexbox columns with dynamic heights (e.g., `style={{ height: `${prob}%` }}`) based on probability percentages.",
+    "Add `data-testid` attributes to all interactive elements (tabs, operation select, input cells, textareas, compute button, history items) to facilitate automated testing.",
+    "Ensure the bottom navigation uses appropriate bottom padding (`pb-[84px]`) on the main container so content is not obscured by the tab bar."
+  ],
+  "accessibility": {
+    "focus_states": "All inputs and buttons must have visible focus rings (`focus:ring-1 focus:ring-accent_cyan focus:outline-none`).",
+    "contrast": "Ensure text contrast meets WCAG AA, specifically checking `#text_muted` against `#surface_main`.",
+    "screen_readers": "Add aria-labels to matrix cell inputs indicating their row and column index (e.g., 'Row 1, Column 1')."
+  }
+}
